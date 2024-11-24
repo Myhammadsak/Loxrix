@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c7bbe2-c9c5-4ab3-8710-3b2b91c13d19" name="Changes" comment="" />
+    <list default="true" id="93c7bbe2-c9c5-4ab3-8710-3b2b91c13d19" name="Changes" comment="first commit(вечная попытка)">
+      <change afterPath="$PROJECT_DIR$/myproject/media/avatars/Без имени.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/projects/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/projects/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/users/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myproject/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Myhammadsak"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Myhammadsak/Loxrix.git",
+    "accountId": "2acf1d6c-fee1-4a2b-baa7-6a5a84ccad05"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
 }]]></component>
@@ -22,9 +51,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myproject/media/avatars" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -41,6 +75,30 @@
       <option name="presentableId" value="Default" />
       <updated>1732141843322</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit(вечная попытка)">
+      <option name="closed" value="true" />
+      <created>1732142315737</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732142315737</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit(вечная попытка)" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit(вечная попытка)" />
   </component>
 </project>
