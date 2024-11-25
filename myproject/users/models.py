@@ -9,6 +9,7 @@ class User(AbstractUser):
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
     email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+    project_history = models.ManyToManyField('projects.Project', related_name='history_users', blank=True)
 
     def save(self, *args, **kwargs):
         if self.is_superuser:

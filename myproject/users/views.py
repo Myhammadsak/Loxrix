@@ -7,6 +7,7 @@ class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAdminOrSelf]
+    lookup_field = 'id'
 
     def get_queryset(self):
         return User.objects.all()

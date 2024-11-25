@@ -1,16 +1,19 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated
 from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import Project
+
 from .serializers import ProjectSerializer
 from .permissions import IsCreator
+from rest_framework.permissions import IsAuthenticated
+from .models import Project
+
 
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticated, IsCreator]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    lookup_field = 'id'
 
     filterset_fields = {
         'created_at': ['gte', 'lte'],

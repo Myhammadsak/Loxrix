@@ -8,14 +8,17 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description']
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     projects = ProjectSerializer(many=True, read_only=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'email',
+        fields = ['id', 'url', 'username', 'first_name', 'last_name', 'email',
                   'role', 'projects', 'avatar']
         read_only_fields = ['id']
+        extra_kwargs = {
+            'url': {'view_name': 'user-detail', 'lookup_field': 'id'},
+        }
 
     def update(self, instance, validated_data):
         instance.first_name = validated_data.get('first_name', instance.first_name)
