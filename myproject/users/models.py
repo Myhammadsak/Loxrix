@@ -18,22 +18,9 @@ class User(AbstractUser):
         ('conzept', 'Conzept'),
         ('non', 'Non'),
     )
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
     email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
-    project_history = models.ManyToManyField('projects.Project', related_name='history_users', blank=True)
     work_role = models.CharField(max_length=20, choices=WORK_CHOICES, default='non')
-
-    def save(self, *args, **kwargs):
-        if self.is_superuser:
-            self.role = 'admin'
-        super().save(*args, **kwargs)
-
-    @classmethod
-    def create_superuser(cls, *args, **kwargs):
-        kwargs['role'] = 'admin'
-        return super().create_superuser(*args, **kwargs)
-
 
     def __str__(self):
         return self.username

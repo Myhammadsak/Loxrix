@@ -1,21 +1,17 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 from .models import User
-from .serializers import UserSerializer
-from .permissions import IsAdminOrSelf
+from users.serializers import UserSerializer
 
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAdminOrSelf]
+    authentication_classes = [JWTAuthentication]
     lookup_field = 'id'
 
     def get_queryset(self):
         return User.objects.all()
-
-    def perform_update(self, serializer):
-        if 'role' in self.request.data and self.request.user.role != 'admin':
-            raise PermissionError("Вы не можете изменять роль пользователя.")
-        serializer.save()
 
     def perform_create(self, serializer):
         if not serializer.validated_data.get('avatar'):
