@@ -14,7 +14,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'url', 'username', 'first_name', 'last_name', 'email',
-                  'role', 'projects', 'avatar']
+                  'role', 'work_role', 'projects', 'avatar']
         read_only_fields = ['id']
         extra_kwargs = {
             'url': {'view_name': 'user-detail', 'lookup_field': 'id'},
@@ -25,6 +25,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         instance.last_name = validated_data.get('last_name', instance.last_name)
         instance.email = validated_data.get('email', instance.email)
         instance.avatar = validated_data.get('avatar', instance.avatar)
+        instance.work_role = validated_data.get('work_role', instance.work_role)
         instance.save()
         return instance
 

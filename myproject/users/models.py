@@ -6,10 +6,23 @@ class User(AbstractUser):
         ('admin', 'Admin'),
         ('user', 'User'),
     )
+
+    WORK_CHOICES = (
+        ('analyst', 'Analyst'),
+        ('frontend', 'Frontend'),
+        ('backend', 'Backend'),
+        ('devops', 'Devops'),
+        ('tester', 'Tester'),
+        ('designer', 'Designer'),
+        ('project_manager', 'Project manager'),
+        ('conzept', 'Conzept'),
+        ('non', 'Non'),
+    )
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
     email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     project_history = models.ManyToManyField('projects.Project', related_name='history_users', blank=True)
+    work_role = models.CharField(max_length=20, choices=WORK_CHOICES, default='non')
 
     def save(self, *args, **kwargs):
         if self.is_superuser:

@@ -19,5 +19,5 @@ class UserViewSet(ModelViewSet):
 
     def perform_create(self, serializer):
         if not serializer.validated_data.get('avatar'):
-            serializer.validated_data['avatar'] = 'avatars/default_avatar.png'
+            serializer.validated_data['avatar'] = 'avatars/Без имени.jpg'
         serializer.save()
